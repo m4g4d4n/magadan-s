@@ -1,0 +1,277 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .menu {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .menu a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .menu a:hover {
+            background-color: #ddd;
+            color: rgb(112, 111, 111);
+        }
+        .menu .active {
+            background-color: #4d4e4d;
+            color: white;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="#services">Servicios</a>
+        <a href="#about">Sobre Nosotros</a>
+        <a href="politica.html">politica de privacida</a>
+    </div>
+
+ 
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Frappés</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .product {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .product img {
+            width: 350px;
+            height: auto;
+        }
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+        .product-info h2 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+        }
+        .product-info p {
+            margin: 0 0 20px;
+            color: #666;
+        }
+        .price {
+            font-size: 1.2em;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        .buy-button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .buy-button:hover {
+            background-color: #2980b9;
+        }
+        .form-container {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #11a129;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-group button:hover {
+            background-color: #0fac0f;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Tienda de Frappés</h1>
+    </div>
+    <div class="container">
+        <div class="product">
+            <img src="vainillaaaaa.jpg" alt="Frappé de Vainilla" width="100px" height="100px">
+            <div class="product-info">
+                <h2>Frappé de Vainilla</h2>
+                <p>Un frappé suave y cremoso con sabor a vainilla. Perfecto para un día caluroso.</p>
+                <div class="price">$75</div>
+                <button class="buy-button" onclick="agregarAlCarrito('Frappé de Vainilla', 75.00)">Agregar al Carrito</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="frappe.jpg" alt="Frappé de Oreo" width="100px" height="100px">
+            <div class="product-info">
+                <h2>Frappé de Oreo</h2>
+                <p>Delicioso frappé con un rico sabor a oreo. Ideal para los amantes del dulce.</p>
+                <div class="price">$65</div>
+                <button class="buy-button" onclick="agregarAlCarrito('Frappé de Chocolate', 65.00)">Agregar al Carrito</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="fraperojoooo.jpg" alt="Frappé de Fresa" width="100px" height="100px">
+            <div class="product-info">
+                <h2>Frappé de fresa</h2>
+                <p>Un frappé con un toque de fresa, perfecto para empezar el día con energía.</p>
+                <div class="price">$70</div>
+                <button class="buy-button" onclick="agregarAlCarrito('Frappé de Café', 70.00)">Agregar al Carrito</button>
+            </div>
+        </div>
+        
+        
+      
+        <!-- Formulario de pedido -->
+        <div class="form-container">
+            <h2>Realizar Pedido</h2>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Dirección:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Realizar Pedido</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function agregarAlCarrito(nombre, precio) {
+            alert(`Producto agregado al carrito:\n\nNombre: ${nombre}\nPrecio: $${precio}`);
+        }
+    </script>
+</body>
+</html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pie de Página</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+            .content {
+                flex: 1;
+            }
+            footer {
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                padding: 0;
+                position: relative;
+                bottom: 0;
+                width: 100%;
+            }
+            footer a {
+                color: #fff;
+                text-decoration: none;
+            }
+            footer a:hover {
+                text-decoration: underline;
+            }
+            .footer-links {
+                margin:  0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <!-- Contenido principal de la página aquí -->
+        </div>
+        <footer>
+            <p>&copy; TIENDA FRAPPeS.</p>
+            <div class="footer-links">
+                <a href="#about">Sobre Nosotros</a> | 
+                <a>Contacto: 762 125 5347</a> | 
+                <a href="https://es-la.facebook.com/privacy/policy/?entry_point=data_policy_redirect&entry=0">Política de Privacidad</a>
+            </div>
+            <p>Síguenos en:
+                <a href="https://www.facebook.com/puntadelcielooficial/" target="_blank">Facebook</a> | 
+                <a href="https://x.com/elonmusk" target="_blank">Twitter</a> | 
+                <a href="https://www.instagram.com/puntadelcielocpc/" target="_blank">Instagram</a>
+                
+            </p>
+        </footer>
+    </body>
+    </html>
